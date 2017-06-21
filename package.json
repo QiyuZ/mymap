@@ -1,0 +1,25 @@
+{
+  "name": "mymap",
+  "version": "1.0.0",
+  "description": "This is the Google Map project repo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yinfeiru/mymap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yinfeiru/mymap/issues"
+  },
+  "homepage": "https://github.com/yinfeiru/mymap#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "path": "^0.12.7",
+    "require": "^2.4.20"
+  }
+}
