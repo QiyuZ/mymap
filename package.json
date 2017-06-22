@@ -4,7 +4,8 @@
   "description": "This is the Google Map project repo.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "./build_css.sh && node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "jquery": "^3.2.1",
+    "less": "^2.7.2",
     "path": "^0.12.7",
     "require": "^2.4.20"
   }
