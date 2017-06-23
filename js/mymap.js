@@ -18,7 +18,7 @@ function initMap() {
   });
 
   $.ajax({
-    url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
+    url: '/nearby_search',
     data: {
       'location': position.lat + ',' + position.lng,
       'type': 'restaurant',
