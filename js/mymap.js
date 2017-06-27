@@ -1,35 +1,38 @@
 var DEFAULT_ZOOM = 15;
 var GOOGLE_API_KEY = 'AIzaSyDFDg1ruZ4GQqPHMv1Z4Lprn_2wXyd0NYk';
 
+$(function() {
+  function initMap() {
+    var position = {
+      lat: 37.773972,
+      lng: -122.43129
+    };
 
-function initMap() {
-  var position = {
-    lat: 37.773972,
-    lng: -122.43129
-  };
+    var map = new google.maps.Map($('#map')[0], {
+      zoom: DEFAULT_ZOOM,
+      center: position
+    });
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    });
 
-  var map = new google.maps.Map($('#map')[0], {
-    zoom: DEFAULT_ZOOM,
-    center: position
-  });
-  var marker = new google.maps.Marker({
-    position: position,
-    map: map
-  });
+    $.ajax({
+      url: '/nearby_search',
+      data: {
+        'location': position.lat + ',' + position.lng,
+        'type': 'restaurant',
+        'key': GOOGLE_API_KEY,
+        'radius': 500
+      },
+      success: function(data) {
+        debugger;
+      },
+      failure: function(data) {
+        debugger;
+      }
+    });
+  }
 
-  $.ajax({
-    url: '/nearby_search',
-    data: {
-      'location': position.lat + ',' + position.lng,
-      'type': 'restaurant',
-      'key': GOOGLE_API_KEY,
-      'radius': 500
-    },
-    success: function(data) {
-      debugger;
-    },
-    failure: function(data) {
-      debugger;
-    }
-  });
-}
+  initMap();
+});
