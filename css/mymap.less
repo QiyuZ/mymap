@@ -12,5 +12,57 @@ html {
       height: 100%;
       width: 100%;
     }
+
+    #place-info-wrapper {
+      background-color: #4285F4;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+
+      #hero-header-wrapper {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        img {
+          width: 408px;
+          height: 305px;
+          top: -53px;
+          position: relative;
+        }
+      }
+
+      #place-basic-info-wrapper {
+        width: 100%;
+        height: 105px;
+
+        #place-basic-info {
+          padding: 16px 24px 20px;
+
+          .info-text {
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+
+            &.place-name {
+              font-size: 18px;
+            }
+
+            &.place-review-score, &.place-type {
+              margin-top: 8px;
+              font-size: 13px;
+              color: white;
+            }
+
+            &.place-review-score {
+              height: 16px;
+            }
+
+            &.place-type {
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+    }
   }
 }
