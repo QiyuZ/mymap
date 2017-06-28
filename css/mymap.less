@@ -17,8 +17,11 @@ html {
       background-color: #4285F4;
       position: absolute;
       top: 0;
-      left: 0;
-      display: none;
+      left: -408px;
+
+      &.visible {
+        left: 0;
+      }
 
       #hero-header-wrapper {
         width: 100%;
@@ -60,6 +63,34 @@ html {
             &.place-type {
               text-transform: capitalize;
             }
+          }
+        }
+      }
+
+      .place-info-visibility-toggle {
+        width: 23px;
+        height: 48px;
+        position: absolute;
+        right: -23px;
+        line-height: 48px;
+        text-align: center;
+        background-color: rgba(255,255,255,0.9);
+        border: none;
+        border-left: 1px solid #D4D4D4;
+        box-shadow: 0px 1px 4px rgba(0,0,0,0.3);
+        outline: none;
+        top: 8px;
+
+        .triangle-icon {
+          width: 0;
+          height: 0;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-right:7px solid rgba(0, 0, 0, 0.7);
+
+          &.left {
+            border-right: 0;
+            border-left: 7px solid rgba(0, 0, 0, 0.7);
           }
         }
       }
