@@ -12,9 +12,9 @@ class SearchBar {
   addTo($parent) {
     $parent.append(this.template);
       $('.search-bar-wrapper').on('keyup', _.bind(function(e) {
-          if (e.keyCode == 13) {
-              this.callback($('.input-text-bar')[0].value);
-          }
+        if (e.keyCode == 13) {
+          this.callback($('.input-text-bar')[0].value);
+        }
       }, this));
   }
 }

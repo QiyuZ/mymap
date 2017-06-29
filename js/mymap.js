@@ -1,8 +1,8 @@
-var DEFAULT_ZOOM = 15;
-var GOOGLE_API_KEY = 'AIzaSyDFDg1ruZ4GQqPHMv1Z4Lprn_2wXyd0NYk';
-var DEFAULT_RADIUS = 1500;
 var DEFAULT_LAT = 37.773972;
 var DEFAULT_LNG = -122.43129;
+var DEFAULT_RADIUS = 1500;
+var DEFAULT_ZOOM = 15;
+var GOOGLE_API_KEY = 'AIzaSyDFDg1ruZ4GQqPHMv1Z4Lprn_2wXyd0NYk';
 
 var current_infowindow;
 var markers_shown;
@@ -24,12 +24,12 @@ $(function() {
     };
 
     var search_bar = new SearchBar(function(type) {
-        var params = {
-             'location': new google.maps.LatLng(DEFAULT_LAT, DEFAULT_LNG),
-             'radius': 500,
-             'type': type
-        };
-        getNearByPlaces(map, params);
+      var params = {
+        'location': new google.maps.LatLng(DEFAULT_LAT, DEFAULT_LNG),
+        'radius': 500,
+        'type': type
+      };
+      getNearByPlaces(map, params);
     });
 
     search_bar.addTo($('body'));
@@ -47,7 +47,6 @@ $(function() {
         });
     }
     markers_shown = [];
-
 
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(params, function(results, status) {
@@ -93,6 +92,7 @@ $(function() {
     var params = {
       placeId: place['place_id']
     };
+
     service.getDetails(params, function(place) {
       $('#hero-header-wrapper img').attr('src', place.photos[0].getUrl({'maxWidth': 408, 'maxheight': 407}));
       $('.place-name').text(place['name']);
